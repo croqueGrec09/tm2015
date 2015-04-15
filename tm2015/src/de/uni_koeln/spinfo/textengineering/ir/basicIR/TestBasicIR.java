@@ -2,23 +2,11 @@ package de.uni_koeln.spinfo.textengineering.ir.basicIR;
 
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedMap;
-import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import de.uni_koeln.spinfo.textengineering.ir.basicIR.Corpus;
-import de.uni_koeln.spinfo.textengineering.ir.basicIR.LinearSearch;
-import de.uni_koeln.spinfo.textengineering.ir.basicIR.TermDokumentMatrix;
 
 public class TestBasicIR {
 
