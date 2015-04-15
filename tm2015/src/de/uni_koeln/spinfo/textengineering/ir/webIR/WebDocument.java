@@ -39,14 +39,6 @@ public final class WebDocument{
     cleanLinks = LinkHelper.allowed(cleanLinks, url);
     this.links = cleanLinks;
     this.url = url;
-
-//    try {
-//      /* Die Links müssen überprüft werden: */
-//      this.links = LinkHelper.checked(url, links);
-//      this.url = url;
-//    } catch (MalformedURLException e) {
-//      e.printStackTrace();
-//    }
   }
 
   /*
