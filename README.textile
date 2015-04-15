@@ -1,0 +1,14 @@
+Code für das Text Engineering Seminar (siehe "Seminarplan":http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html )
+
+
+h2. Information Retrieval
+
+table(#tableborders){ border: 2px solid #ccc; border-collapse: collapse; border-spacing: 0; width:100%;}.
+| | *Inhalt* | *Ressourcen/Dependencies* | *Literatur* |
+| "basicIR":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/basicIR | Korpus, Lineare Suche, Term-Dokument-Matrix | "Shakespeare":http://www.gutenberg.org/cache/epub/100/pg100.txt | IIR Kap. 1 |
+| "booleanIR":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/booleanIR | Invertierter Index, Listen-Intersection, Vorverarbeitung, Positional Index, PositionalIntersect | | IIR Kap. 1 + 2 |
+| "rankedIR":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/rankedIR | Ranked Retrieval: Termgewichtung, Vector Space Model | | IIR Kap. 6 + 7 |
+| "evaluation":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/evaluation | Evaluation: Precision, Recall, F-Maß | | IIR Kap. 8 |
+| "lucene":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/lucene | Lucene: Indexer und Searcher | lucene-core, lucene-queryparser, lucene-analyzers-common | "Lucene in Action":http://www.manning.com/hatcher3/ |
+| "webIR":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/webIR | Crawler, WebDocument | commons-io, nekohtml, jrobotx | IIR Kap. 19 + 20 |
+
