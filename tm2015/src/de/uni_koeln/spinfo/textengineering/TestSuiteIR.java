@@ -8,7 +8,6 @@ import de.uni_koeln.spinfo.textengineering.ir.booleanIR.TestBooleanIR;
 import de.uni_koeln.spinfo.textengineering.ir.evaluation.TestEval;
 import de.uni_koeln.spinfo.textengineering.ir.lucene.TestLucene;
 import de.uni_koeln.spinfo.textengineering.ir.rankedIR.TestRankedIR;
-import de.uni_koeln.spinfo.textengineering.ir.webIR.TestCrawler;
 
 /*
  * Eine Suite ermöglicht das ausführen von mehreren Klassen mit Tests. Wird ausgefuehrt mit Run As
@@ -20,6 +19,6 @@ import de.uni_koeln.spinfo.textengineering.ir.webIR.TestCrawler;
  * @author Fabian Steeg, Claes Neuefeind (c.neuefeind@uni-koeln.de)
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ TestBasicIR.class, TestBooleanIR.class, TestRankedIR.class, TestEval.class, TestLucene.class, TestCrawler.class })
+@Suite.SuiteClasses({ TestBasicIR.class, TestBooleanIR.class, TestRankedIR.class, TestEval.class, TestLucene.class})
 public class TestSuiteIR {
 }
