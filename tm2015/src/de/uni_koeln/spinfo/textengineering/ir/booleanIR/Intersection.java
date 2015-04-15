@@ -16,12 +16,10 @@ import java.util.TreeSet;
 public class Intersection {
 
 	/*
-	 * Implementierung der Listen-Intersection, die die Sortierung der Listen
-	 * ausnutzt, fast Zeile-für-Zeile umgesetzt wie in Manning et al. 2008, S.
-	 * 11, beschrieben.
+	 * Implementierung der Listen-Intersection, die die Sortierung der Listen ausnutzt, fast Zeile-für-Zeile umgesetzt
+	 * wie in Manning et al. 2008, S. 11, beschrieben.
 	 */
-	public static SortedSet<Integer> of(SortedSet<Integer> pl1,
-			SortedSet<Integer> pl2) {
+	public static SortedSet<Integer> of(SortedSet<Integer> pl1, SortedSet<Integer> pl2) {
 
 		SortedSet<Integer> answer = new TreeSet<Integer>();
 		Iterator<Integer> it1 = pl1.iterator();
@@ -44,8 +42,7 @@ public class Intersection {
 	}
 
 	/*
-	 * Ein wenig müssen wir uns verbiegen um nah am Pseudocode zu bleiben: Wir
-	 * müssen u.a. NoSuchElementExceptions vermeiden (wenn der Iterator keine
+	 * Um nah am Pseudocode zu bleiben, müssen wir u.a. NoSuchElementExceptions vermeiden (wenn der Iterator keine
 	 * Elemente mehr hat).
 	 */
 	protected static Integer nextOrNull(Iterator<Integer> i1) {
@@ -53,8 +50,7 @@ public class Intersection {
 	}
 
 	// Eine alternative Umsetzung mithilfe der Java-API:
-	public static SortedSet<Integer> ofApi(SortedSet<Integer> pl1,
-			SortedSet<Integer> pl2) {
+	public static SortedSet<Integer> ofApi(SortedSet<Integer> pl1, SortedSet<Integer> pl2) {
 		// Wir brauchen ein neues set, da sonst das Teilergebnis verändert wird:
 		SortedSet<Integer> answer = new TreeSet<Integer>(pl1);
 		answer.retainAll(pl2);
@@ -62,16 +58,13 @@ public class Intersection {
 	}
 
 	/*
-	 * Implementierung der PositionalIntersect, fast Zeile-für-Zeile umgesetzt
-	 * wie in Manning et al. 2008, S. 42, beschrieben. Diese Variante erlaubt
-	 * sog. 'proximity'-suchen ("finde Term1 und Term2 innnerhalb eines max
-	 * Abstands von k Wörtern"). PositionalIntersect ist weitgehend analog zu
-	 * normaler Intersection - im Grunde wird einfach das Statement
-	 * answer.add(p1)) ersetzt durch das Handling der Positions-Listen.
+	 * Implementierung der PositionalIntersect, fast Zeile-für-Zeile umgesetzt wie in Manning et al. 2008, S. 42,
+	 * beschrieben. Diese Variante erlaubt sog. 'proximity'-suchen ("finde Term1 und Term2 innnerhalb eines max Abstands
+	 * von k Wörtern"). PositionalIntersect ist weitgehend analog zu normaler Intersection - im Grunde wird einfach das
+	 * Statement answer.add(p1)) ersetzt durch das Handling der Positions-Listen.
 	 */
 
-	public static SortedMap<Integer, List<Integer>> of(
-			SortedMap<Integer, List<Integer>> pl1,
+	public static SortedMap<Integer, List<Integer>> of(SortedMap<Integer, List<Integer>> pl1,
 			SortedMap<Integer, List<Integer>> pl2, int k) {
 
 		Iterator<Integer> it1 = pl1.keySet().iterator();
@@ -108,10 +101,8 @@ public class Intersection {
 							posList = new ArrayList<Integer>();
 						}
 						/*
-						 * abweichend zum Seminar hier zusätzlich noch eine
-						 * contains-Abfrage, damit Positionen nur einmal im
-						 * Ergebnis landen (die Verwendung von Sets würde einen
-						 * größeren Umbau erfordern).
+						 * abweichend zum Seminar hier zusätzlich noch eine contains-Abfrage, damit Positionen nur
+						 * einmal im Ergebnis landen (die Verwendung von Sets würde einen größeren Umbau erfordern).
 						 */
 						if (!posList.contains(p)) {
 							posList.add(p);
