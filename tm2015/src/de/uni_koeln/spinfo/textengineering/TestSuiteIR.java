@@ -3,11 +3,11 @@ package de.uni_koeln.spinfo.textengineering;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-import de.uni_koeln.spinfo.textengineering.ir.basicIR.TestBasicIR;
-import de.uni_koeln.spinfo.textengineering.ir.booleanIR.TestBooleanIR;
+import de.uni_koeln.spinfo.textengineering.ir.basic.TestBasicIR;
+import de.uni_koeln.spinfo.textengineering.ir.boole.TestBooleanIR;
 import de.uni_koeln.spinfo.textengineering.ir.evaluation.TestEval;
 import de.uni_koeln.spinfo.textengineering.ir.lucene.TestLucene;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.TestRankedIR;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.TestRankedIR;
 
 /*
  * Eine Suite ermöglicht das ausführen von mehreren Klassen mit Tests. Wird ausgefuehrt mit Run As
