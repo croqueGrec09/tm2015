@@ -3,7 +3,7 @@ package de.uni_koeln.spinfo.textengineering.ir.evaluation;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.Document;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.Document;
 
 /*
  * Evaluation (Precision, Recall, F-Maß) einer Query und einer Dokumentenmenge gegen einen Goldstandard.

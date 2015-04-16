@@ -3,9 +3,9 @@ package de.uni_koeln.spinfo.textengineering.ir.evaluation;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.uni_koeln.spinfo.textengineering.ir.booleanIR.Preprocessor;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.Document;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.InformationRetrieval;
+import de.uni_koeln.spinfo.textengineering.ir.boole.Preprocessor;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.Document;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.InformationRetrieval;
 
 /*
  * Erstellung eines Dummy-Goldstandards auf Grundlage unseres Shakespeare-Korpus

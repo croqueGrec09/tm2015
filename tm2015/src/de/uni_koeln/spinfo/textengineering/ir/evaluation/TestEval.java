@@ -11,16 +11,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.Corpus;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.Document;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.InformationRetrieval;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.InvertedIndex;
-import de.uni_koeln.spinfo.textengineering.ir.rankedIR.Ranker;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.Corpus;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.Document;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.InformationRetrieval;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.InvertedIndex;
+import de.uni_koeln.spinfo.textengineering.ir.ranked.Ranker;
 
 public class TestEval {
 
 	// Basiskomponenten unseres IR-Systems:
-	private static de.uni_koeln.spinfo.textengineering.ir.rankedIR.Corpus corpus;
+	private static de.uni_koeln.spinfo.textengineering.ir.ranked.Corpus corpus;
 	private static InformationRetrieval index;
 	private static Ranker ranker;
 	private static String query;
