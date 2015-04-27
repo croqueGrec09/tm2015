@@ -18,7 +18,7 @@ import de.uni_koeln.spinfo.textengineering.ir.web.crawler.Parser;
 /**
  * Tests for crawling and parsing.
  * 
- * @author Fabian Steeg (fabian.steeg@uni-koeln.de)
+ * @author Fabian Steeg
  */
 public final class TestWebIR {
 

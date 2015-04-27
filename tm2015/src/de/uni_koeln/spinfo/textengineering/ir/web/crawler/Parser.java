@@ -105,7 +105,7 @@ public final class Parser {
             }
         }
         /*
-         * Jetzt ist der aktuelle Knoten abgearbeitet, jetzt kommen kommt der
+         * Jetzt ist der aktuelle Knoten abgearbeitet, jetzt kommt der
          * rekursive Aufruf für den nächsten Knoten auf der gleichen
          * Schachtelungsebene (wenn es einen gibt):
          */
