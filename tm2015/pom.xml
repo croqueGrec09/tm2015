@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<repositories>
-		<!--repo for jrobotx -->
+		<!-- NEXUS-REPO FOR ROBOT EXCLUSION -->
 		<repository>
 			<id>spinfo-nexus</id>
 			<url>http://tesla.spinfo.uni-koeln.de:8081/nexus/content/groups/public</url>
@@ -48,9 +48,6 @@
 			<version>2.4</version>
 		</dependency>
 
-		<!-- JAXB -->
-		<!-- <dependency> <groupId>javax.xml.bind</groupId> <artifactId>jaxb-api</artifactId> 
-			<version>2.2.12</version> </dependency> -->
 		<!-- NEKO HTML PARSER -->
 		<dependency>
 			<groupId>nekohtml</groupId>
@@ -65,13 +62,13 @@
 			<version>0.2</version>
 		</dependency>
 
-		<!-- LOGGING -->
+		<!-- DB4O -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.6</version>
+			<groupId>com.db4o</groupId>
+			<artifactId>com.db4o</artifactId>
+			<version>7.7.67</version>
 		</dependency>
-
+		
 	</dependencies>
 
 	<build>
