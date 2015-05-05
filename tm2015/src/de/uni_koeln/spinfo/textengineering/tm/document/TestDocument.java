@@ -36,10 +36,10 @@ import de.uni_koeln.spinfo.textengineering.tm.document.Extractor.Location;
  * Material for the course 'Text-Mining', University of Cologne.
  * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textmining.html)
  * 
- * @author Fabian Steeg
+ * @author Fabian Steeg, Claes Neuefeind
  */
 public class TestDocument {
-	private static final String DATA = "data/corpus-tm-1.db";
+	private static final String DATA = "data/corpus-tm-2.db";
 	private Corpus corpus;
 	private Document document;
 

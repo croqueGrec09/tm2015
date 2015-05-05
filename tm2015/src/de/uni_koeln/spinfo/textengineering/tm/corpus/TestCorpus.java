@@ -38,13 +38,13 @@ import de.uni_koeln.spinfo.textengineering.tm.document.Document;
  * @author Fabian Steeg, Claes Neuefeind
  */
 public class TestCorpus {
+	private static final String DATA = "data/corpus-tm-1.db";
 	private Corpus corpus;
 
 	public static void main(final String[] args) {
 		/* Hier erstellen und crawlen (dauert). */
-		Corpus c = CorpusDatabase.create("data/corpus-tm-1.db");
+		Corpus c = CorpusDatabase.create(DATA);
 		List<String> seed = Arrays.asList("http://www.spiegel.de", "http://www.bild.de");
-		// List<String> seed = Arrays.asList("http://www.der-postillon.com/");// ,"http://www.spiegel.de");
 		List<WebDocument> list = Crawler.crawl(1, seed);
 		System.out.println("# of docs crawled: " + list.size());
 		c.addAll(list);
@@ -53,7 +53,7 @@ public class TestCorpus {
 	@Before
 	public void before() {
 		/* Hier (vor jedem Test) nur öffnen. */
-		corpus = CorpusDatabase.open("data/corpus-tm-1.db");
+		corpus = CorpusDatabase.open(DATA);
 	}
 
 	@Test
