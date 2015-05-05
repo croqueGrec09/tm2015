@@ -30,6 +30,7 @@ import org.junit.Test;
 import de.uni_koeln.spinfo.textengineering.tm.corpus.Corpus;
 import de.uni_koeln.spinfo.textengineering.tm.corpus.CorpusDatabase;
 import de.uni_koeln.spinfo.textengineering.tm.corpus.crawler.Crawler;
+import de.uni_koeln.spinfo.textengineering.tm.document.Extractor.Location;
 
 /**
  * Material for the course 'Text-Mining', University of Cologne.
@@ -68,6 +69,21 @@ public class TestFeatureVector {
 		/* Hier (nach jedem Test) schliessen. */
 		corpus.close();
 	}
+
+	@Test
+	public void topicExtraction() {
+		/*
+		 * Wir testen hier nur die SPIEGEL-Variante:
+		 */
+		String topic = null;
+		Location spiegel = Extractor.Location.SPIEGEL;
+		if (document.getSource().matches(spiegel.getPattern())) {
+			topic = new Extractor(spiegel).extract(document.getSource());
+		}
+		Assert.assertTrue("Topic is null", topic != null);
+		System.out.println("Extracted topic: " + topic);
+	}
+
 
 	@Test
 	public void vector() {
