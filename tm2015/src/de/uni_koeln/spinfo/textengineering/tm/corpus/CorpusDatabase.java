@@ -68,7 +68,7 @@ public final class CorpusDatabase implements Corpus {
 	}
 
 	private CorpusDatabase(final String location) {
-		db = Db4o.openFile(location);
+		db = Db4o.openFile(Db4o.newConfiguration(), location);
 		if (db == null)
 			System.out.println("db not available");
 		index = new DocumentIndex();
