@@ -1,7 +1,7 @@
 Code für das Text Engineering Seminar (siehe "Seminarplan":http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html )
 
 
-h2. Information Retrieval
+h2. package ir (Information Retrieval)
 
 table(#tableborders){ border: 2px solid #ccc; border-collapse: collapse; border-spacing: 0; width:100%;}.
 | | *Inhalt* | *Ressourcen/Dependencies* | *Literatur* |
