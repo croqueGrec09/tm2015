@@ -130,10 +130,13 @@ public final class DocumentIndex implements Corpus {
 	 * @see de.uni_koeln.spinfo.textengineering.tm.corpus.Corpus#getDocumentsForTopic(java.lang.String)
 	 */
 	public List<Document> getDocumentsForTopic(final String query) {
-		
-		//TODO
-		
-		return null;
+		List<Document> result = new ArrayList<Document>();
+		for (Document document : docs) {
+			if (document.getTopic().contains(query)) {
+				result.add(document);
+			}
+		}
+		return result;
 	}
 
 	/**

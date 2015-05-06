@@ -138,10 +138,13 @@ public final class CorpusDatabase implements Corpus {
 	 * @see de.uni_koeln.spinfo.textengineering.tm.corpus.Corpus#getDocumentsForTopic(java.lang.String)
 	 */
 	public List<Document> getDocumentsForTopic(final String topic) {
-
-		//TODO
-		
-		return null;
+		@SuppressWarnings("serial")
+		List<Document> set = db.query(new Predicate<Document>() {
+			public boolean match(final Document candidate) {
+				return candidate.getTopic().equals(topic);
+			}
+		});
+		return new ArrayList<Document>(set);
 	}
 
 	/**
