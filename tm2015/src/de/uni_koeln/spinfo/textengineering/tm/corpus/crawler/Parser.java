@@ -1,6 +1,6 @@
 /**
- * Material for the course 'Information-Retrieval', University of Cologne.
- * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-informationretrieval.html)
+ * Material for the course 'Information-Retrieval and Text-Mining', University of Cologne.
+ * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html)
  * <p/>
  * Copyright (C) 2008-2009 Fabian Steeg
  * <p/>

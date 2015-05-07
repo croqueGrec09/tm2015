@@ -1,6 +1,6 @@
 /**
- * Material for the course 'Text-Mining', University of Cologne.
- * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textmining.html)
+ * Material for the course 'Information-Retrieval and Text-Mining', University of Cologne.
+ * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html)
  * <p/>
  * Copyright (C) 2008-2009 Fabian Steeg
  * <p/>
@@ -24,51 +24,60 @@ import java.util.Set;
 
 import de.uni_koeln.spinfo.textengineering.tm.document.Document;
 
-
 /**
  * Interface to a corpus.
+ * 
  * @author Fabian Steeg
  */
 public interface Corpus {
 
-    /** @return All documents in the corpus */
-    List<Document> getDocuments();
+	/** @return All documents in the corpus */
+	List<Document> getDocuments();
 
-    /**
-     * @param query The query
-     * @return Documents from a source that contains the given query
-     */
-    List<Document> getDocumentsForSource(String query);
+	/**
+	 * @param query
+	 *            The query
+	 * @return Documents from a source that contains the given query
+	 */
+	List<Document> getDocumentsForSource(String query);
 
-    /**
-     * @param query The query
-     * @return Documents whose topic contains the given query
-     */
-    List<Document> getDocumentsForTopic(String query);
+	/**
+	 * @param query
+	 *            The query
+	 * @return Documents whose topic contains the given query
+	 */
+	List<Document> getDocumentsForTopic(String query);
 
-    /** @param document The document to add */
-    void add(Document document);
+	/**
+	 * @param document
+	 *            The document to add
+	 */
+	void add(Document document);
 
-    /** @param documents The documents to add */
-    void addAll(List<? extends Document> documents);
+	/**
+	 * @param documents
+	 *            The documents to add
+	 */
+	void addAll(List<? extends Document> documents);
 
-    /** Close the connection to the source of the corpus, if any. */
-    void close();
+	/** Close the connection to the source of the corpus, if any. */
+	void close();
 
-    /**
-     * @return All terms in the corpus
-     */
-    Set<String> getTerms();
+	/**
+	 * @return All terms in the corpus
+	 */
+	Set<String> getTerms();
 
-    /**
-     * @param dictionaryTerm The term to find the document frequency for
-     * @return The document frequency of the term, i.e. the number of documents
-     *         in this corpus that contain the given term
-     */
-    Integer getDocumentFrequencyOf(String dictionaryTerm);
+	/**
+	 * @param dictionaryTerm
+	 *            The term to find the document frequency for
+	 * @return The document frequency of the term, i.e. the number of documents in this corpus that contain the given
+	 *         term
+	 */
+	Integer getDocumentFrequencyOf(String dictionaryTerm);
 
-    /**
-     * @return The number of documents in the corpus
-     */
-    Integer getNumberOfDocuments();
+	/**
+	 * @return The number of documents in the corpus
+	 */
+	Integer getNumberOfDocuments();
 }

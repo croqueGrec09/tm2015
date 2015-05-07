@@ -1,7 +1,7 @@
 /**
- * Material for the course 'Text-Mining', University of Cologne.
- * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textmining.html)
- * <p/>
+  * Material for the course 'Information-Retrieval and Text-Mining', University of Cologne.
+ * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html)
+* <p/>
  * Copyright (C) 2008-2009 Fabian Steeg
  * <p/>
  * This program is free software; you can redistribute it and/or modify it under
@@ -33,7 +33,7 @@ import de.uni_koeln.spinfo.textengineering.tm.document.Document;
 /**
  * Persistent corpus implementation based on an object database (DB4O), using native queries for document retrieval.
  * 
- * @author Fabian Steeg (fsteeg)
+ * @author Fabian Steeg
  */
 public final class CorpusDatabase implements Corpus {
 	/*

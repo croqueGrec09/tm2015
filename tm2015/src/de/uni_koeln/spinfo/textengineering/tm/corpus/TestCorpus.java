@@ -32,8 +32,8 @@ import de.uni_koeln.spinfo.textengineering.tm.document.WebDocument;
 import de.uni_koeln.spinfo.textengineering.tm.document.Document;
 
 /**
- * Material for the course 'Text-Mining', University of Cologne.
- * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textmining.html)
+ * Material for the course 'Information-Retrieval and Text-Mining', University of Cologne.
+ * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html)
  * 
  * @author Fabian Steeg, Claes Neuefeind
  */
@@ -87,9 +87,9 @@ public class TestCorpus {
 	}
 
 	public void testTopicQuery() {
-		
-		//TODO
-		
+
+		// TODO
+
 	}
 
 	@After
