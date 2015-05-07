@@ -198,10 +198,14 @@ public final class WebDocument implements Document {
 	 * @see de.uni_koeln.spinfo.textengineering.tm.document.Document#getTopic()
 	 */
 	public String getTopic() {
-
-		// TODO
-
-		return "UNKNOWN";
+		String url = this.getSource();
+		Extractor.Location[] values = Extractor.Location.values();
+		for(Extractor.Location location : values){
+			if(url.matches(location.getPattern())){
+				return new Extractor(location).extract(url);
+			}
+		}
+		return null;
 	}
 
 	/**
