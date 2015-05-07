@@ -36,7 +36,7 @@ import de.uni_koeln.spinfo.textengineering.tm.document.WebDocument;
 /**
  * A crawler runnbale for concurrent crawling.
  * 
- * @author Fabian Steeg (fsteeg)
+ * @author Fabian Steeg
  */
 class CrawlerRunnable implements Runnable {
 
@@ -85,11 +85,11 @@ class CrawlerRunnable implements Runnable {
 		}
 		WebDocument document = Parser.parse(urlToCrawl);
 		if (document != null) {
-//			if (document.getTopic() != null && document.getText().trim().length() > 0) {
+			if (document.getTopic() != null && document.getText().trim().length() > 0) {
 				docs.add(document);
-//			} else {
-//				System.err.println("Could not extract topic for: " + urlToCrawl);
-//			}
+			} else {
+				System.err.println("Could not extract topic for: " + urlToCrawl);
+			}
 			/* Ein Mindestmass an Verzögerung, dann die Rekursion: */
 			delay();
 			if (i < depth) {

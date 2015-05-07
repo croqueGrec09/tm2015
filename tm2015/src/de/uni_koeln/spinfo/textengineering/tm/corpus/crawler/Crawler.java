@@ -35,7 +35,7 @@ import de.uni_koeln.spinfo.textengineering.tm.document.WebDocument;
 /**
  * A simple concurrent crawler.
  * 
- * @author Fabian Steeg (fsteeg)
+ * @author Fabian Steeg
  */
 public final class Crawler {
 

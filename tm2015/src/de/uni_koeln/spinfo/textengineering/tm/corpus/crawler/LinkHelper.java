@@ -33,7 +33,7 @@ import java.util.Set;
  */
 /**
  * Helper class for working with links.
- * @author Fabian Steeg (fsteeg)
+ * @author Fabian Steeg
  */
 public final class LinkHelper {
     private LinkHelper() {
