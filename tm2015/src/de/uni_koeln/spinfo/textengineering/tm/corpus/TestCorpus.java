@@ -41,10 +41,11 @@ public class TestCorpus {
 	private static final String DATA = "data/corpus-tm-1.db";
 	private Corpus corpus;
 
+	
 	public static void main(final String[] args) {
 		/* Hier erstellen und crawlen (dauert). */
 		Corpus c = CorpusDatabase.create(DATA);
-		List<String> seed = Arrays.asList("http://www.spiegel.de", "http://www.bild.de");
+		List<String> seed = Arrays.asList("http://www.spiegel.de", "http://www.welt.de");
 		List<WebDocument> list = Crawler.crawl(1, seed);
 		System.out.println("# of docs crawled: " + list.size());
 		c.addAll(list);
@@ -60,17 +61,17 @@ public class TestCorpus {
 	public void testSourceQuery() {
 		List<Document> all = corpus.getDocuments();
 		List<Document> spiegel = corpus.getDocumentsForSource("spiegel.de");
-		List<Document> bild = corpus.getDocumentsForSource("bild.de");
+		List<Document> welt = corpus.getDocumentsForSource("welt.de");
 		/* Jetzt können wir erstmal überprüfen ob wir überhaupt was haben: */
 		Assert.assertTrue("Found no documents at all", all.size() > 0);
 		Assert.assertTrue("No documents source query", spiegel.size() > 0);
-		Assert.assertTrue("No documents source query", bild.size() > 0);
+		Assert.assertTrue("No documents source query", welt.size() > 0);
 		/*
 		 * Und unsere Erwartungen an die Ergebnisse festhalten (durch die Strings, die als Fehlermeldung ausgegeben
 		 * würden wenn die Überprüfung fehlschlägt) und überprüfen:
 		 */
 		Assert.assertTrue("Source result has wrong source", spiegel.get(0).getSource().contains("spiegel.de"));
-		Assert.assertTrue("Source result has wrong source", bild.get(0).getSource().contains("bild.de"));
+		Assert.assertTrue("Source result has wrong source", welt.get(0).getSource().contains("welt.de"));
 		/* Kurzausgaben zur Info: */
 		System.out.println("----------------------");
 		System.out.println("Results for source 'spiegel':");
@@ -79,17 +80,32 @@ public class TestCorpus {
 			System.out.println(document);
 		}
 		System.out.println("----------------------");
-		System.out.println("Results for source 'bild':");
+		System.out.println("Results for source 'welt':");
 		System.out.println("----------------------");
-		for (Document document : bild) {
+		for (Document document : welt) {
 			System.out.println(document);
 		}
 	}
 
+	@Test
 	public void testTopicQuery() {
-
-		// TODO
-
+		List<Document> all = corpus.getDocuments();
+		List<Document> politik = corpus.getDocumentsForTopic("politik");
+		/* Jetzt können wir erstmal überprüfen ob wir überhaupt was haben: */
+		Assert.assertTrue("Found no documents at all", all.size() > 0);
+		Assert.assertTrue("No documents for topic query", politik.size() > 0);
+		/*
+		 * Und unsere Erwartungen an die Ergebnisse festhalten (durch die Strings, die als Fehlermeldung ausgegeben
+		 * würden wenn die Überprüfung fehlschlägt) und überprüfen:
+		 */
+		Assert.assertEquals("politik", politik.get(0).getTopic());
+		/* Kurzausgaben zur Info: */
+		System.out.println("----------------------");
+		System.out.println("Results for 'politik':");
+		System.out.println("----------------------");
+		for (Document document : politik) {
+			System.out.println(document);
+		}
 	}
 
 	@After
