@@ -1,6 +1,6 @@
 /**
- * Material for the course 'Information-Retrieval', University of Cologne.
- * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-informationretrieval.html)
+ * Material for the course 'Information-Retrieval and Text-Mining', University of Cologne.
+ * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html)
  * <p/>
  * Copyright (C) 2008-2009 Fabian Steeg
  * <p/>
@@ -132,7 +132,7 @@ public final class WebDocument implements Document {
 	}
 
 	private String checked(final String url) {
-		return String.format("%s %s", this.getClass().getSimpleName(), this.checksum);
+		return String.format("%s %s %s", this.getClass().getSimpleName(), this.checksum, this.url);
 	}
 
 	/**
@@ -200,8 +200,8 @@ public final class WebDocument implements Document {
 	public String getTopic() {
 		String url = this.getSource();
 		Extractor.Location[] values = Extractor.Location.values();
-		for(Extractor.Location location : values){
-			if(url.matches(location.getPattern())){
+		for (Extractor.Location location : values) {
+			if (url.matches(location.getPattern())) {
 				return new Extractor(location).extract(url);
 			}
 		}

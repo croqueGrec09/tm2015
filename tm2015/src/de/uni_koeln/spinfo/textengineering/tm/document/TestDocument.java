@@ -1,6 +1,6 @@
 /**
- * Material for the course 'Text-Mining', University of Cologne.
- * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textmining.html)
+ * Material for the course 'Information-Retrieval and Text-Mining', University of Cologne.
+ * (http://www.spinfo.phil-fak.uni-koeln.de/spinfo-textengineering.html)
  * <p/>
  * Copyright (C) 2008-2009 Fabian Steeg
  * <p/>
@@ -83,7 +83,6 @@ public class TestDocument {
 		Assert.assertTrue("Topic is null", topic != null);
 		System.out.println("Extracted topic: " + topic);
 	}
-
 
 	@Test
 	public void vector() {
