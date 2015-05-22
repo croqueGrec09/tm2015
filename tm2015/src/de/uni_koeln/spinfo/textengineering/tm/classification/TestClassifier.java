@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.After;
@@ -32,8 +33,7 @@ public class TestClassifier {
 	private Set<Document> testSet;
 	private Set<Document> trainingSet;
 	private ArrayList<Document> goldSet;
-
-	// TODO: hier fehlt der Classifier ...
+	private TextClassifier classifier;
 
 	
 	public static void main(final String[] args) {
@@ -80,14 +80,17 @@ public class TestClassifier {
 
 	private void testEval(final String query) {
 		goldSet = new ArrayList<Document>(testSet);
+		classifier = new TextClassifier(new NaiveBayes(), trainingSet);
 		System.out.println("Classification of documents from: " + query);
 		System.out.println("------------------------------------------------");
 		System.out.println("Training set: " + trainingSet.size());
 		System.out.println("Test set: " + testSet.size());
 		System.out.println("Gold set: " + goldSet.size());
-
-		// TODO wie soll das Ergebnis aussehen?
-
+		Map<Document,String> resultClasses = classifier.classify(testSet);
+		System.out.println("Result: " + resultClasses);
+		
+		// TODO Evaluation und Ausgabe ...
+		
 	}
 
 }
