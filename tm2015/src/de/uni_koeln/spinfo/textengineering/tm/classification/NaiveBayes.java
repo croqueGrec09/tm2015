@@ -21,8 +21,7 @@ package de.uni_koeln.spinfo.textengineering.tm.classification;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.lucene.index.TermContext;
+import java.util.Set;
 
 import de.uni_koeln.spinfo.textengineering.tm.document.Document;
 
@@ -98,12 +97,84 @@ public class NaiveBayes implements ClassifierStrategy {
 	@Override
 	public String classify(Document document) {
 
-		/*
-		 * TODO hier muss nun die 'beste Klasse' ermittelt, indem der trainierte Classifier angewendet wird ... dafür
-		 * brauchen wir noch die 'prior probability' und die Summe der Term-Evidenzen - z.B. jeweils als eigene Methode
-		 */
-
-		return null;
+		//Nummer
+		double max = 0d;	
+		//W <- ExtractTokensFromDoc(V,d)
+		Set<String> vocabulary = document.getTerms();
+		//Set der Klassen - PSL: Stimmlagen (wie Sopran)
+		Set<String> classes = termFrequenciesForClasses.keySet();
+		//Die beste Klasse - zur Initialisierung die "nächstbeste" Klasse
+		String best = classes.iterator().next();
+		for (String c : classes){
+			//A-Priori-Wahrscheinlichkeit herausfinden
+			double prior = prior(c);
+			//Claes: "Ui. Bauen wir eine eigene Methode dafür."
+			//akkumulierte Evidenz der Termwahrscheinlichkeiten
+			double ev = 0d;
+			for (String term: vocabulary){
+				//Claes: "Schlimm ist das, oder?"
+				//Ermittlung der Wahrscheinlichkeit für Term zu Klasse - wie wahrscheinlich ist eine Laetitia unter den Sopranistinnen?
+				double condprob = Math.log(condprob(term,c));
+				ev = ev+condprob;
+			}
+			//Hinzufügen des a-Priori-Wertes zur ermittelten Wahrscheinlichkeit
+			double prob = prior+ev;
+			if(prob > max){
+				max = prob;
+				best = c;
+			}
+		}
+		return best;
 	}
 
+	/**
+	 * Ermittlung der A-Priori-Wahrscheinlichkeit für einen Term - die Klassenfrequenz für eine Klasse geteilt durch die Gesamtanzahl der Dokumente
+	 * PSL: wie wahrscheinlich ist es, dass es eine Stimme in einem Chor gibt?
+	 * @param c - die Klasse
+	 * @return prior - die Wahrscheinlichkeit
+	 */
+	private double prior(String c){
+		double prior = Math.log(classFrequencies.get(c)/docCount);
+		return prior;
+	}
+	
+	/**
+	 * 
+	 * @param term - der zu prüfende Term
+	 * @param c - die gerade überprüfte Klasse
+	 * @return
+	 */
+	private double condprob(String term, String c){
+		//Die Termfrequenzen für eine Klasse heraussuchen - PSL: Sopranistinnen
+		Map<String,Integer> termFreqs = termFrequenciesForClasses.get(c);
+		//Die Termfrequenz für einen Term berechnen - PSL: Laetitia
+		Integer tf = termFreqs.get(term);
+		double condprob;
+		
+		//Claes: "Wenn's null ist, sind wir sowieso gearscht ..." 
+		if(tf == null){
+			condprob = 0;
+		}
+		//Claes: "handhabbare Termfrequenzen"
+		else {
+			condprob = tf/sum(termFreqs);
+		}
+		
+		return condprob;
+	}
+
+	
+	/**
+	 * Summe der Termfrequenzen ermitteln
+	 * @param termFreqs
+	 * @return
+	 */
+	private Integer sum(Map<String, Integer> termFreqs) {
+		Integer sum = 0;
+		for(Integer i : termFreqs.values()){
+			sum += i;
+		}
+		return sum;
+	}
+	
 }
