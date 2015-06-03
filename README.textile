@@ -18,3 +18,4 @@ table(#tableborders){ border: 2px solid #ccc; border-collapse: collapse; border-
 | | *Inhalt* | *Ressourcen/Dependencies* | *Literatur* |
 | "document":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/tm/document | Document, Topics, TermIndex, FeatureVector |  |  |
 | "corpus":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/tm/corpus | Korpus, DB, DocumentIndex, Crawler | db4o, crawler (siehe package "ir.web":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/ir/web/crawler ) | |
+| "classification":https://github.com/claesn/tm2015/tree/master/tm2015/src/de/uni_koeln/spinfo/textengineering/tm/classification | TextClassifier, Naive Bayes |  | |
